@@ -8,9 +8,11 @@ import 'package:weather/models/yahoo_weather_model.dart';
 class ApiHelper {
   static const String cURL =
       "https://weather-ydn-yql.media.yahoo.com/forecastrss";
-  static const String _cAppID = "your app id";
-  static const String _cConsumerKey = "your ConsumerKey";
-  static const String _cConsumerSecret = "your ConsumerSecret";
+  static const String _cAppID = "ku5fPY36";
+  static const String _cConsumerKey =
+      "dj0yJmk9eHR4OUloYVM4YXZNJmQ9WVdrOWEzVTFabEJaTXpZbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTY4";
+  static const String _cConsumerSecret =
+      "1054d05a2e51083ca6cbb2ca7c260acd1ea2b70b";
   static const String _cOAuthVersion = "1.0";
   static const String _cOAuthSignMethod = "HMAC-SHA1";
   static const String _cUnitID = "u=c";

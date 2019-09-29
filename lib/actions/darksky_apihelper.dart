@@ -8,7 +8,7 @@ import 'package:weather/models/darksky_weather_model.dart';
 
 class ApiHelper {
   static const String _host = 'https://api.darksky.net/forecast/';
-  static const String _appkey = 'your key';
+  static const String _appkey = 'bebf569a9bfaa6d6876967c647cc196e';
   static String _language = ui.window.locale.languageCode;
 
   static Future<WeatherModel> getWeather(double lan, double lon,
@@ -22,7 +22,7 @@ class ApiHelper {
 
   static Future<Object> _httpGet(String param,
       {bool cached = true,
-      cacheDuration = const Duration(hours: 0),
+      cacheDuration = const Duration(hours: 1),
       maxStale = const Duration(days: 30)}) async {
     try {
       var dio = new Dio();

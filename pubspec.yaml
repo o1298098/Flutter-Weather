@@ -32,6 +32,7 @@ dependencies:
   geolocator: ^5.1.1
   shimmer: ^1.0.1
   intl: ^0.16.0
+  flutter_icons: ^0.3.1
 
 dev_dependencies:
   flutter_test:

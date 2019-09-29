@@ -8,6 +8,7 @@ class HomePageState implements Cloneable<HomePageState> {
   bool isToday;
   String city;
   String country;
+  int themeIndex;
 
   @override
   HomePageState clone() {
@@ -16,10 +17,13 @@ class HomePageState implements Cloneable<HomePageState> {
       ..weather = weather
       ..isToday = isToday
       ..city = city
-      ..country = country;
+      ..country = country
+      ..themeIndex = themeIndex;
   }
 }
 
 HomePageState initState(Map<String, dynamic> args) {
-  return HomePageState()..isToday = true;
+  return HomePageState()
+    ..isToday = true
+    ..themeIndex = 2;
 }

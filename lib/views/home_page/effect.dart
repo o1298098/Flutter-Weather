@@ -1,9 +1,10 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/animation.dart';
-import 'package:flutter/widgets.dart' hide Action;
+import 'package:flutter/material.dart' hide Action;
 import 'package:geolocator/geolocator.dart';
 import 'package:weather/actions/darksky_apihelper.dart';
 import 'package:weather/actions/mapbox_apihelper.dart';
+import 'package:weather/views/futureweather_page/page.dart';
 import 'action.dart';
 import 'state.dart';
 
@@ -19,8 +20,19 @@ Effect<HomePageState> buildEffect() {
 void _onAction(Action action, Context<HomePageState> ctx) {}
 
 void _futureWeatherCilcked(Action action, Context<HomePageState> ctx) async {
-  await Navigator.of(ctx.context).pushNamed('futureWeatherPage',
-      arguments: {'data': ctx.state.weather.daily});
+  await Navigator.of(ctx.context)
+      .push(PageRouteBuilder(pageBuilder: (context, animation, secAnimation) {
+    return FadeTransition(
+        opacity: animation,
+        child: FutureWeatherPage().buildPage({
+          'data': ctx.state.weather.daily,
+          'themeIndex': ctx.state.themeIndex
+        }));
+  }));
+  /*await Navigator.of(ctx.context).pushNamed('futureWeatherPage', arguments: {
+    'data': ctx.state.weather.daily,
+    'themeIndex': ctx.state.themeIndex
+  });*/
 }
 
 void _onInit(Action action, Context<HomePageState> ctx) async {
@@ -28,7 +40,7 @@ void _onInit(Action action, Context<HomePageState> ctx) async {
   ctx.state.animationController =
       AnimationController(vsync: ticker, duration: Duration(milliseconds: 300));
   Position position = await Geolocator()
-      .getCurrentPosition(desiredAccuracy: LocationAccuracy.medium);
+      .getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
   var location =
       await MapBoxApi.reverseGeocoding(position.latitude, position.longitude);
   if (location != null)

@@ -169,7 +169,8 @@ class HourlyData {
     time = jsonRes['time'];
     uvIndex = jsonRes['uvIndex'];
     windBearing = jsonRes['windBearing'];
-    apparentTemperature = jsonRes['apparentTemperature'];
+    apparentTemperature =
+        double.parse(jsonRes['apparentTemperature'].toString() ?? '0.0');
     cloudCover = double.parse(jsonRes['cloudCover'].toString() ?? '0.0');
     dewPoint = double.parse(jsonRes['dewPoint'].toString() ?? '0.0');
     humidity = double.parse(jsonRes['humidity'].toString() ?? '0.0');
@@ -397,6 +398,8 @@ class Currently {
   String icon;
   String summary;
 
+  String precipType;
+
   Currently.fromParams(
       {this.nearestStormBearing,
       this.nearestStormDistance,
@@ -416,7 +419,8 @@ class Currently {
       this.windGust,
       this.windSpeed,
       this.icon,
-      this.summary});
+      this.summary,
+      this.precipType});
 
   Currently.fromJson(jsonRes) {
     nearestStormBearing = jsonRes['nearestStormBearing'];
@@ -439,10 +443,12 @@ class Currently {
     windSpeed = double.parse(jsonRes['windSpeed'].toString() ?? '0.0');
     icon = jsonRes['icon'];
     summary = jsonRes['summary'];
+
+    precipType = jsonRes['precipType'];
   }
 
   @override
   String toString() {
-    return '{"nearestStormBearing": $nearestStormBearing,"nearestStormDistance": $nearestStormDistance,"precipIntensity": $precipIntensity,"precipProbability": $precipProbability,"time": $time,"uvIndex": $uvIndex,"windBearing": $windBearing,"apparentTemperature": $apparentTemperature,"cloudCover": $cloudCover,"dewPoint": $dewPoint,"humidity": $humidity,"ozone": $ozone,"pressure": $pressure,"temperature": $temperature,"visibility": $visibility,"windGust": $windGust,"windSpeed": $windSpeed,"icon": ${icon != null ? '${json.encode(icon)}' : 'null'},"summary": ${summary != null ? '${json.encode(summary)}' : 'null'}}';
+    return '{"nearestStormBearing": $nearestStormBearing,"nearestStormDistance": $nearestStormDistance,"precipIntensity": $precipIntensity,"precipProbability": $precipProbability,"time": $time,"uvIndex": $uvIndex,"windBearing": $windBearing,"apparentTemperature": $apparentTemperature,"cloudCover": $cloudCover,"dewPoint": $dewPoint,"humidity": $humidity,"ozone": $ozone,"pressure": $pressure,"temperature": $temperature,"visibility": $visibility,"windGust": $windGust,"windSpeed": $windSpeed,"icon": ${icon != null ? '${json.encode(icon)}' : 'null'},"summary": ${summary != null ? '${json.encode(summary)}' : 'null'},"precipType": ${precipType != null ? '${json.encode(precipType)}' : 'null'}}';
   }
 }

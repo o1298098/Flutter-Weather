@@ -7,12 +7,17 @@ enum HomePageAction {
   setLocation,
   setWeather,
   futureWeatherCilcked,
-  isTodaychanged
+  isTodaychanged,
+  themeChanged,
 }
 
 class HomePageActionCreator {
   static Action onAction() {
     return const Action(HomePageAction.action);
+  }
+
+  static Action themeChanged() {
+    return const Action(HomePageAction.themeChanged);
   }
 
   static Action isTodaychanged(bool b) {

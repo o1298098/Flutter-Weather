@@ -11,6 +11,7 @@ Reducer<HomePageState> buildReducer() {
       HomePageAction.setLocation: _setLocation,
       HomePageAction.setWeather: _setWeather,
       HomePageAction.isTodaychanged: _isTodaychanged,
+      HomePageAction.themeChanged: _themeChanged,
     },
   );
 }
@@ -40,5 +41,13 @@ HomePageState _setWeather(HomePageState state, Action action) {
   final WeatherModel model = action.payload;
   final HomePageState newState = state.clone();
   newState.weather = model;
+  return newState;
+}
+
+HomePageState _themeChanged(HomePageState state, Action action) {
+  int _index = state.themeIndex + 1;
+  if (_index >= 3) _index = 1;
+  final HomePageState newState = state.clone();
+  newState.themeIndex = _index;
   return newState;
 }
