@@ -18,7 +18,11 @@ Widget buildView(
 
   String _getTime(int time) {
     var date = DateTime.fromMillisecondsSinceEpoch(time);
-    return '${date.hour > 12 ? date.hour - 12 : date.hour}:${date.minute}';
+
+    return DateFormat(DateFormat.HOUR_MINUTE)
+        .format(date)
+        .split(' ')[0]
+        .toString();
   }
 
   bool _isPm(int time) {
@@ -33,7 +37,7 @@ Widget buildView(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
         SizedBox(
-          width: Adapt.px(250),
+          width: Adapt.px(260),
           height: Adapt.px(360),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

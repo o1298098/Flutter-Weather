@@ -148,27 +148,26 @@ Widget buildView(
       scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
           parent: state.animationController,
           curve: Interval(0.7, 0.85, curve: Curves.ease))),
-      child: Center(
-        child: InkWell(
-          onTap: () => dispatch(Theme2ActionCreator.goBack()),
-          child: Container(
-            width: Adapt.px(100),
-            height: Adapt.px(100),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                      color: Colors.black.withAlpha(50),
-                      offset: Offset(0, Adapt.px(10)),
-                      blurRadius: Adapt.px(40),
-                      spreadRadius: Adapt.px(1))
-                ]),
-            child: Icon(
-              Icons.keyboard_arrow_down,
-              size: Adapt.px(60),
-              color: Color(0xFFFF8B33),
-            ),
+      child: InkWell(
+        onTap: () => dispatch(Theme2ActionCreator.goBack()),
+        child: Container(
+          width: Adapt.px(100),
+          height: Adapt.px(100),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.circle,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    color: Colors.black.withAlpha(50),
+                    offset: Offset(0, Adapt.px(10)),
+                    blurRadius: Adapt.px(40),
+                    spreadRadius: Adapt.px(1))
+              ]),
+          child: Icon(
+            Icons.keyboard_arrow_down,
+            size: Adapt.px(50),
+            color: Color(0xFFFF8B33),
           ),
         ),
       ),
@@ -195,7 +194,7 @@ Widget buildView(
               width: Adapt.px(20),
             ),
             Text(
-              'Zhuhai Shi, China',
+              '${state.city}, ${state.country}',
               style: TextStyle(color: Colors.black, fontSize: Adapt.px(30)),
             )
           ],
@@ -238,8 +237,8 @@ Widget buildView(
                 color: Color(0xFFFF8B33),
                 borderRadius:
                     BorderRadius.vertical(top: Radius.circular(Adapt.px(80)))),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: ListView(
+              physics: BouncingScrollPhysics(),
               children: <Widget>[
                 SizedBox(height: Adapt.px(80)),
                 Padding(

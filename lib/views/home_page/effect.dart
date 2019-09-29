@@ -26,7 +26,9 @@ void _futureWeatherCilcked(Action action, Context<HomePageState> ctx) async {
         opacity: animation,
         child: FutureWeatherPage().buildPage({
           'data': ctx.state.weather.daily,
-          'themeIndex': ctx.state.themeIndex
+          'themeIndex': ctx.state.themeIndex,
+          'city': ctx.state.city,
+          'country': ctx.state.country
         }));
   }));
   /*await Navigator.of(ctx.context).pushNamed('futureWeatherPage', arguments: {

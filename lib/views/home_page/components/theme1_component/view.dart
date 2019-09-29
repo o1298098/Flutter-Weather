@@ -50,6 +50,7 @@ Widget buildView(
         ? Container(
             key: ValueKey(state.city),
             margin: EdgeInsets.only(left: Adapt.px(50)),
+            alignment: Alignment.centerLeft,
             padding: EdgeInsets.fromLTRB(
                 0, Adapt.px(45), Adapt.px(45), Adapt.px(45)),
             width: Adapt.px(95),
@@ -60,6 +61,7 @@ Widget buildView(
           )
         : Container(
             key: ValueKey(state.city),
+            alignment: Alignment.centerLeft,
             height: Adapt.px(140),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -269,8 +271,8 @@ Widget buildView(
                 stops: <double>[0.0, 1.0])),
         child: SafeArea(
           bottom: false,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
+            physics: BouncingScrollPhysics(),
             children: <Widget>[
               _buildMenuButton(),
               _buildLocationCell(),

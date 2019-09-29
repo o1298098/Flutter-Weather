@@ -6,6 +6,9 @@ import '../../state.dart';
 
 class Theme2State implements Cloneable<Theme2State> {
   Daily daily;
+
+  String city;
+  String country;
   AnimationController animationController;
   AnimationController tabController;
   @override
@@ -21,6 +24,9 @@ class Theme2Connector extends ConnOp<FutureWeatherPageState, Theme2State> {
     mstate.daily = state.daily;
     mstate.tabController = state.tabController;
     mstate.animationController = state.animationController;
+    mstate.city = state.city;
+    mstate.country = state.country;
+
     return mstate;
   }
 }

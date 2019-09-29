@@ -52,8 +52,8 @@ Widget buildView(
       padding: EdgeInsets.symmetric(
         horizontal: Adapt.px(50),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        physics: BouncingScrollPhysics(),
         children: <Widget>[
           SizedBox(
             height: Adapt.px(50),
@@ -66,12 +66,8 @@ Widget buildView(
           SizedBox(
             height: Adapt.px(80),
           ),
-          ListView(
-            shrinkWrap: true,
-            children:
-                state.daily.data.getRange(1, 8).map(_buildWeatherCell).toList(),
-          )
-        ],
+        ]..addAll(
+            state.daily.data.getRange(1, 8).map(_buildWeatherCell).toList()),
       ),
     ),
   );
