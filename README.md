@@ -7,8 +7,7 @@ a flutter weather build with fish redux and Dark Sky weather api.
 first, apply apikey from https://darksky.net/dev , then replace _apikey at /lib/actions/darksky_apihelper.dart.
 
 ## Preview  
-<img src="https://github.com/o1298098/Flutter-Weather/blob/master/srceenshot/ios.gif" width="250">
-<img src="https://github.com/o1298098/Flutter-Weather/blob/master/srceenshot/ios2.gif" width="250">
+<img src="https://github.com/o1298098/Flutter-Weather/blob/master/srceenshot/ios.gif" width="250"><img src="https://github.com/o1298098/Flutter-Weather/blob/master/srceenshot/ios2.gif" width="250">
 
 ### template 1
 
