@@ -33,6 +33,8 @@ dependencies:
   shimmer: ^1.0.1
   intl: ^0.16.0
   flutter_icons: ^0.3.1
+  fl_chart: ^0.2.2
+  syncfusion_flutter_charts: ^1.0.0-beta.5
 
 dev_dependencies:
   flutter_test:

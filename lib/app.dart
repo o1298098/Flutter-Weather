@@ -79,8 +79,8 @@ Future<Widget> createApp() async {
   return MaterialApp(
     title: 'Movie',
     debugShowCheckedModeBanner: false,
-    theme: _lightTheme,
-    //darkTheme: _darkTheme,
+    theme: ThemeData.from(colorScheme: const ColorScheme.light()),
+    darkTheme: ThemeData.from(colorScheme: const ColorScheme.dark()),
     localizationsDelegates: [
       I18n.delegate,
       GlobalMaterialLocalizations.delegate,

@@ -4,6 +4,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/actions/adapt.dart';
+import 'package:weather/actions/weathertype_helper.dart';
 import 'package:weather/actions/weekday.dart';
 import 'package:weather/views/home_page/action.dart';
 import 'package:weather/widgets/weather_icon.dart';
@@ -48,7 +49,7 @@ Widget buildView(
                     TextStyle(fontSize: Adapt.px(35), color: Colors.grey[400]),
               ),
               Text(
-                '${state.weather?.daily != null ? state.weather?.daily?.data[0]?.precipType ?? '-' : '-'}',
+                '${state.weather?.currently != null ? WeatherTypeHelper.getWeatherType(state.weather.currently.icon) : '-'}',
                 style:
                     TextStyle(fontSize: Adapt.px(35), color: Colors.grey[400]),
               ),
@@ -156,7 +157,7 @@ Widget buildView(
 
   Widget _buildGridCell(Widget icon, String title, String value) {
     return Container(
-      key: ValueKey('GridCell$title'),
+      key: ValueKey('GridCell$value'),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(Adapt.px(30)),
           border: Border.all(color: Colors.grey[400])),
@@ -208,7 +209,7 @@ Widget buildView(
     var _currently = state?.weather?.currently;
     var _daily = state.weather?.daily?.data;
     return GridView.count(
-      key: ValueKey('Grid'),
+      //key: ValueKey('Grid'),
       physics: NeverScrollableScrollPhysics(),
       crossAxisCount: 3,
       mainAxisSpacing: Adapt.px(80),

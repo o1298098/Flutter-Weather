@@ -4,6 +4,8 @@ import 'package:weather/views/home_page/components/theme1_component/state.dart';
 
 import 'components/theme2_component/component.dart';
 import 'components/theme2_component/state.dart';
+import 'components/theme3_component/component.dart';
+import 'components/theme3_component/state.dart';
 import 'effect.dart';
 import 'reducer.dart';
 import 'state.dart';
@@ -22,6 +24,7 @@ class HomePage extends Page<HomePageState, Map<String, dynamic>>
               slots: <String, Dependent<HomePageState>>{
                 'theme1': Theme1Connector() + Theme1Component(),
                 'theme2': Theme2Connector() + Theme2Component(),
+                'theme3': Theme3Connector() + Theme3Component(),
               }),
           middleware: <Middleware<HomePageState>>[],
         );

@@ -127,6 +127,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.6"
+  fl_chart:
+    dependency: "direct main"
+    description:
+      name: fl_chart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.2"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -364,6 +371,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  syncfusion_flutter_charts:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_charts
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0-beta.5"
   synchronized:
     dependency: transitive
     description:

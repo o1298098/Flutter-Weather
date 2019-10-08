@@ -46,7 +46,7 @@ HomePageState _setWeather(HomePageState state, Action action) {
 
 HomePageState _themeChanged(HomePageState state, Action action) {
   int _index = state.themeIndex + 1;
-  if (_index >= 3) _index = 1;
+  if (_index >= 4) _index = 1;
   final HomePageState newState = state.clone();
   newState.themeIndex = _index;
   return newState;

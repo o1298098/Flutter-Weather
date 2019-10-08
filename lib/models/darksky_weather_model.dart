@@ -380,8 +380,8 @@ class DailyData {
 class Currently {
   int nearestStormBearing;
   int nearestStormDistance;
-  int precipIntensity;
-  int precipProbability;
+  double precipIntensity;
+  double precipProbability;
   int time;
   int uvIndex;
   int windBearing;
@@ -425,8 +425,10 @@ class Currently {
   Currently.fromJson(jsonRes) {
     nearestStormBearing = jsonRes['nearestStormBearing'];
     nearestStormDistance = jsonRes['nearestStormDistance'];
-    precipIntensity = jsonRes['precipIntensity'];
-    precipProbability = jsonRes['precipProbability'];
+    precipIntensity =
+        double.parse(jsonRes['precipIntensity'].toString() ?? '0.0');
+    precipProbability =
+        double.parse(jsonRes['precipProbability'].toString() ?? '0.0');
     time = jsonRes['time'];
     uvIndex = jsonRes['uvIndex'];
     windBearing = jsonRes['windBearing'];

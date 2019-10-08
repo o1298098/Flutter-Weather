@@ -14,10 +14,13 @@ Effect<HomePageState> buildEffect() {
     HomePageAction.futureWeatherCilcked: _futureWeatherCilcked,
     Lifecycle.initState: _onInit,
     Lifecycle.dispose: _onDispose,
+    Lifecycle.build: _onBuild
   });
 }
 
 void _onAction(Action action, Context<HomePageState> ctx) {}
+
+void _onBuild(Action action, Context<HomePageState> ctx) {}
 
 void _futureWeatherCilcked(Action action, Context<HomePageState> ctx) async {
   await Navigator.of(ctx.context)
