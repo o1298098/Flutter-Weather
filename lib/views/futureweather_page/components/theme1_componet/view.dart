@@ -41,7 +41,7 @@ Widget buildView(
   }
 
   return Scaffold(
-    backgroundColor: Colors.white,
+    //backgroundColor: Colors.white,
     appBar: AppBar(
       brightness: Brightness.light,
       backgroundColor: Colors.transparent,

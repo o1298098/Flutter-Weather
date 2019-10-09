@@ -18,7 +18,9 @@ base on <a href='https://dribbble.com/shots/7106462-Weather-App'>https://dribbbl
 
 base on <a href='https://dribbble.com/shots/6086556-Weather-App-UI'>https://dribbble.com/shots/6086556-Weather-App-UI</a>  
 
-<img src="https://github.com/o1298098/Flutter-Weather/blob/master/srceenshot/ios3.png" width="250"><img src="https://github.com/o1298098/Flutter-Weather/blob/master/srceenshot/ios4.png" width="250">
+<img src="https://github.com/o1298098/Flutter-Weather/blob/master/srceenshot/ios3.png" width="250"><img src="https://github.com/o1298098/Flutter-Weather/blob/master/srceenshot/ios4.png" width="250">  
+<img src="https://github.com/o1298098/Flutter-Weather/blob/master/srceenshot/ios7.png" width="250"><img src="https://github.com/o1298098/Flutter-Weather/blob/master/srceenshot/ios8.png" width="250">
+
 ### template 3
 
 base on <a href='https://dribbble.com/shots/6556204-Weather-App-Forecast-Weekly-Chart'>https://dribbble.com/shots/6556204-Weather-App-Forecast-Weekly-Chart</a>  
