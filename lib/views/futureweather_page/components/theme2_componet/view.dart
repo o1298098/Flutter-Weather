@@ -2,6 +2,8 @@ import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/actions/adapt.dart';
+import 'package:weather/globalstore/action.dart';
+import 'package:weather/globalstore/store.dart';
 import 'package:weather/models/darksky_weather_model.dart';
 import 'package:weather/widgets/weather_icon.dart';
 
@@ -225,7 +227,10 @@ Widget buildView(
                   Icons.menu,
                   color: _theme.iconTheme.color,
                 ),
-                onSelected: (selected) {},
+                onSelected: (selected) {
+                  GlobalStore.store
+                      .dispatch(GlobalActionCreator.onchangeTheme());
+                },
                 itemBuilder: (ctx) {
                   return <PopupMenuItem<String>>[
                     PopupMenuItem<String>(

@@ -8,7 +8,7 @@ import 'package:weather/models/darksky_weather_model.dart';
 
 class ApiHelper {
   static const String _host = 'https://api.darksky.net/forecast/';
-  static const String _appkey = 'bebf569a9bfaa6d6876967c647cc196e';
+  static const String _appkey = '0d85818f7391e3eb70c280c85de73de5';
   static String _language = ui.window.locale.languageCode;
 
   static Future<WeatherModel> getWeather(double lan, double lon,

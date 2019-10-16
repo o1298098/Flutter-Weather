@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:weather/actions/adapt.dart';
+import 'package:weather/actions/hourlycell_color.dart';
 import 'package:weather/models/darksky_weather_model.dart';
 import 'package:weather/views/home_page/action.dart';
 import 'package:weather/widgets/custom_panel.dart';
@@ -120,6 +121,7 @@ Widget buildView(
         HourlyCellType type, Color topColor, Color bottomColor, HourlyData d) {
       final double _height = Adapt.px(350);
       final double _width = (Adapt.screenW() - 70 - Adapt.px(40)) / 3;
+      //var _colors=HourlyCellColor.getColor(d.time);
       return HourlyCell(
         width: _width,
         height: _height,
@@ -256,7 +258,7 @@ Widget buildView(
                 )
               ],
             ),
-            SizedBox(height: Adapt.px(50)),
+            SizedBox(height: Adapt.px(30)),
             state.weather?.hourly == null
                 ? SizedBox(height: Adapt.px(300))
                 : SizedBox(

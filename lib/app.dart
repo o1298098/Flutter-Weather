@@ -20,11 +20,13 @@ Future<Widget> createApp() async {
           GlobalStore.store,
           (Object pagestate, GlobalState appState) {
             final GlobalBaseState p = pagestate;
-            if (p.themeColor != appState.themeColor) {
+            if (p.themeColor != appState.themeColor ||
+                p.themeIndex != appState.themeIndex) {
               if (pagestate is Cloneable) {
                 final Object copy = pagestate.clone();
                 final GlobalBaseState newState = copy;
                 newState.themeColor = appState.themeColor;
+                newState.themeIndex = appState.themeIndex;
                 return newState;
               }
             }

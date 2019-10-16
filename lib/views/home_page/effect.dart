@@ -4,6 +4,8 @@ import 'package:flutter/material.dart' hide Action;
 import 'package:geolocator/geolocator.dart';
 import 'package:weather/actions/darksky_apihelper.dart';
 import 'package:weather/actions/mapbox_apihelper.dart';
+import 'package:weather/globalstore/action.dart';
+import 'package:weather/globalstore/store.dart';
 import 'package:weather/views/futureweather_page/page.dart';
 import 'action.dart';
 import 'state.dart';
@@ -12,6 +14,7 @@ Effect<HomePageState> buildEffect() {
   return combineEffects(<Object, Effect<HomePageState>>{
     HomePageAction.action: _onAction,
     HomePageAction.futureWeatherCilcked: _futureWeatherCilcked,
+    HomePageAction.themeChanged: _themeChanged,
     Lifecycle.initState: _onInit,
     Lifecycle.dispose: _onDispose,
     Lifecycle.build: _onBuild
@@ -21,6 +24,9 @@ Effect<HomePageState> buildEffect() {
 void _onAction(Action action, Context<HomePageState> ctx) {}
 
 void _onBuild(Action action, Context<HomePageState> ctx) {}
+void _themeChanged(Action action, Context<HomePageState> ctx) {
+  GlobalStore.store.dispatch(GlobalActionCreator.onchangeTheme());
+}
 
 void _futureWeatherCilcked(Action action, Context<HomePageState> ctx) async {
   await Navigator.of(ctx.context)

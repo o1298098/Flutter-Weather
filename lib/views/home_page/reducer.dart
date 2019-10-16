@@ -11,7 +11,7 @@ Reducer<HomePageState> buildReducer() {
       HomePageAction.setLocation: _setLocation,
       HomePageAction.setWeather: _setWeather,
       HomePageAction.isTodaychanged: _isTodaychanged,
-      HomePageAction.themeChanged: _themeChanged,
+      //HomePageAction.themeChanged: _themeChanged,
     },
   );
 }

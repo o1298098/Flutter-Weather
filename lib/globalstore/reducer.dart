@@ -10,6 +10,7 @@ Reducer<GlobalState> buildReducer() {
   return asReducer(
     <Object, Reducer<GlobalState>>{
       GlobalAction.changeThemeColor: _onchangeThemeColor,
+      GlobalAction.changeTheme: _onchangeTheme,
     },
   );
 }
@@ -25,4 +26,11 @@ GlobalState _onchangeThemeColor(GlobalState state, Action action) {
   final Color next =
       _colors[((_colors.indexOf(state.themeColor) + 1) % _colors.length)];
   return state.clone()..themeColor = next;
+}
+
+GlobalState _onchangeTheme(GlobalState state, Action action) {
+  //final int index = ((state.themeIndex + 1) % 3) + 1;
+  int index = state.themeIndex + 1;
+  if (index >= 4) index = 1;
+  return state.clone()..themeIndex = index;
 }

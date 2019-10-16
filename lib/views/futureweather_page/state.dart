@@ -1,8 +1,10 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
+import 'package:weather/globalstore/state.dart';
 import 'package:weather/models/darksky_weather_model.dart';
 
-class FutureWeatherPageState implements Cloneable<FutureWeatherPageState> {
+class FutureWeatherPageState
+    implements GlobalBaseState, Cloneable<FutureWeatherPageState> {
   Daily daily;
 
   String city;
@@ -11,8 +13,11 @@ class FutureWeatherPageState implements Cloneable<FutureWeatherPageState> {
   AnimationController animationController;
   AnimationController tabController;
 
+  @override
   int themeIndex;
 
+  @override
+  Color themeColor;
   @override
   FutureWeatherPageState clone() {
     return FutureWeatherPageState()
